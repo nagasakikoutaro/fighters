@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('history/create', 'Admin\HistoryController@add');
+    Route::get('kitahirosima/create','Admin\KitahirosimaController@add');
+    Route::get('realtime/create','Admin\RealtimeController@add');
+});
+Auth::routes();
