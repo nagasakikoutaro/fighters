@@ -1,5 +1,5 @@
 {{-- layouts/admin.blade.phpを読み込む --}}
-@extends('layouts.admin')
+@extends('layouts.realtime')
 
 
 {{-- admin.blade.phpの@yield('title')に'北海道日本ハムファイターズ応援'を埋め込む --}}

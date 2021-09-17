@@ -15,8 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('history/create', 'Admin\HistoryController@add');
-    Route::get('kitahirosima/create','Admin\KitahirosimaController@add');
-    Route::get('realtime/create','Admin\RealtimeController@add');
+    Route::get('history/create', 'Admin\HistoryController@add')->middleware('auth');
+    Route::get('kitahirosima/create','Admin\KitahirosimaController@add')->middleware('auth');
+    Route::get('realtime/create','Admin\RealtimeController@add')->middleware('auth');
 });
 Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
