@@ -12,9 +12,9 @@ class RealtimeController extends Controller
     {
         return view('content.realtime.create');
     }
-    public function create()
+    public function create(Request $request)
     {
-        return view('content/realtime/create');
+        return redirect('content/realtime/create');
     }
     public function edit()
     {
