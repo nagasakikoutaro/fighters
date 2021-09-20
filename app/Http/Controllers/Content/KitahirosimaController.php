@@ -12,9 +12,9 @@ class KitahirosimaController extends Controller
     {
         return view('content.kitahirosima.create');
     }
-    public function create()
+    public function create(Request $request)
     {
-        return view('content/kitahirosima/create');
+        return redirect('content/kitahirosima/create');
     }
     public function edit()
     {
