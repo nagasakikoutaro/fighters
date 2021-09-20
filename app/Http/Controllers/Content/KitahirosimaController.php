@@ -10,18 +10,18 @@ class KitahirosimaController extends Controller
     //
      public function add()
     {
-        return view('admin.kitahirosima.create');
+        return view('content.kitahirosima.create');
     }
     public function create()
     {
-        return view('admin/kitahirosima/create');
+        return view('content/kitahirosima/create');
     }
     public function edit()
     {
-        return view('admin.kitahirosima.edit');
+        return view('content.kitahirosima.edit');
     }
     public function update()
     {
-        return view('admin/kitahirosima/edit');
+        return view('content/kitahirosima/edit');
     }
 }
