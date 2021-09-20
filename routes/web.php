@@ -14,10 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix' => 'content'], function() {
-    Route::get('history/create', 'Content\HistoryController@add')->middleware('auth');
-    Route::get('kitahirosima/create','Content\KitahirosimaController@add')->middleware('auth');
-    Route::get('realtime/create','Content\RealtimeController@add')->middleware('auth');
+Route::group(['prefix' => 'content',middleware => 'auth'], function() {
+    Route::get('history/create', 'Content\HistoryController@add');
+    Route::get('kitahirosima/create','Content\KitahirosimaController@add');
+    Route::get('realtime/create','Content\RealtimeController@add');
+    Route::post('history/create','Content\HistoryController@create');
+    Route::post('kitahirosima/create','Content\KitahirosimaController@create');
+    Route::post('realtime/create','Content\RealtimeController@create');
 });
 Auth::routes();
 
