@@ -1,5 +1,5 @@
 {{-- layouts/admin.blade.phpを読み込む --}}
-@extends('layouts.admin')
+@extends('layouts.history')
 
 
 {{-- admin.blade.phpの@yield('title')に'思い出'を埋め込む --}}
