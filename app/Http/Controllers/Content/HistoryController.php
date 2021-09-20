@@ -14,14 +14,14 @@ class HistoryController extends Controller
     }
     public function create()
     {
-        return view('admin/history/create');
+        return view('content/history/create');
     }
     public function edit()
     {
-        return view('admin.history.edit');
+        return view('content.history.edit');
     }
     public function update()
     {
-        return view('admin/history/edit');
+        return view('content/history/edit');
     }
 }
