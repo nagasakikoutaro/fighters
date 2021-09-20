@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix' => 'content',middleware => 'auth'], function() {
+Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
     Route::get('history/create', 'Content\HistoryController@add');
     Route::get('kitahirosima/create','Content\KitahirosimaController@add');
     Route::get('realtime/create','Content\RealtimeController@add');
