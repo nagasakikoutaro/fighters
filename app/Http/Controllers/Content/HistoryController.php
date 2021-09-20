@@ -12,9 +12,9 @@ class HistoryController extends Controller
     {
         return view('content.history.create');
     }
-    public function create()
+    public function create(Request $request)
     {
-        return view('content/history/create');
+        return redirect('content/history/create');
     }
     public function edit()
     {
