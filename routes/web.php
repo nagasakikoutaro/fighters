@@ -21,6 +21,8 @@ Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
     Route::post('history/create','Content\HistoryController@create');
     Route::post('kitahirosima/create','Content\KitahirosimaController@create');
     Route::post('realtime/create','Content\RealtimeController@create');
+    Route::get('history','Content\HistoryController@index');
+    Route::get('kitahirosima,Content\KitahirosimaController@index');
 });
 Auth::routes();
 
