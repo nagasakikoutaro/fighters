@@ -17,6 +17,7 @@ class CreateHistoryTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');//タイトルを保存
             $table->string('body');//本文を保存
+            $table->string('image_path')->nullable();  // 画像のパスを保存するカラム
             $table->timestamps();
         });
     }
