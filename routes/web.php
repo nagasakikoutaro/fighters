@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
     Route::get('history/create', 'Content\HistoryController@add');
     Route::get('kitahirosima/create','Content\KitahirosimaController@add');
@@ -26,4 +29,3 @@ Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

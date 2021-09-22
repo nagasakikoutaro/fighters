@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKitahirosimaTable extends Migration
+class CreateHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateKitahirosimaTable extends Migration
      */
     public function up()
     {
-        Schema::create('kitahirosima', function (Blueprint $table) {
+        Schema::create('histories', function (Blueprint $table) {
             $table->bigIncrements('id');
-             $table->string('title'); // 新球場のタイトルを保存するカラム
-            $table->string('body');  // 新球場の本文を保存するカラム
+            $table->string('title');//タイトルを保存
+            $table->string('body');//本文を保存
             $table->string('image_path')->nullable();  // 画像のパスを保存するカラム
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateKitahirosimaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kitahirosima');
+        Schema::dropIfExists('histories');
     }
 }
