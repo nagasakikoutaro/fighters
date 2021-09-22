@@ -17,7 +17,7 @@ class HistoryController extends Controller
     public function create(Request $request)
     {
         //validationを行う
-        $this->validation($request, History::$rules);
+        $this->validate($request, History::$rules);
         $history = new History();
         $form = $request->all();
         
@@ -40,7 +40,7 @@ class HistoryController extends Controller
     
     public function index(Request $request)
     {
-        $cond_title = $request->$cond_title;
+        $cond_title = $request->cond_title;
         if ($cond_title != '') {
             //検索されたら検索結果を取得する
             $posts = History::where('title', $cond_title)->get();
