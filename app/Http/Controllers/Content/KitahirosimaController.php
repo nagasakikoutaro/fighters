@@ -38,7 +38,7 @@ class KitahirosimaController extends Controller
     
     public function index(Request $request)
     {
-        $cond_title = $request->$cond_title;
+        $cond_title = $request->cond_title;
         if ($cond_title != '') {
             //検索されたら検索結果を習得する
             $posts = Kitahirosima::where('title', $cond_title)->get();
