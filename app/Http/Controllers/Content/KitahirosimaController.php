@@ -50,10 +50,35 @@ class KitahirosimaController extends Controller
     }
     public function edit()
     {
-        return view('content.kitahirosima.edit');
+        // Kitahirosima Modelからデータを取得する
+      $news = Kitahirosima::find($request->id);
+      if (empty($kitahirosima)) {
+        abort(404);    
+      }
+        return view('content.kitahirosima.edit',['kitahirosima_form' => $kitahirosima]);
     }
     public function update()
     {
-        return view('content/kitahirosima/edit');
+        // Validationをかける
+      $this->validate($request, Kitahirosima::$rules);
+      // kitahirosima Modelからデータを取得する
+      $news = Kitahirosima::find($request->id);
+      // 送信されてきたフォームデータを格納する
+        $kitahirosima_form = $request->all();
+      if ($request->remove == 'true') {
+          $kitahirosima_form['image_path'] = null;
+      } elseif ($request->file('image')) {
+          $path = $request->file('image')->store('public/image');
+          $kitahirosima_form['image_path'] = basename($path);
+      } else {
+          $kitahirosima_form['image_path'] = $kitahirosima->image_path;
+      }
+
+      unset($kitahirosima_form['image']);
+      unset($kitahirosima_form['remove']);
+      unset($kitahirosima_form['_token']);
+      // 該当するデータを上書きして保存する
+      $kitahirosima->fill($kitahirosima_form)->save();
+        return redirect('content/kitahirosima/');
     }
 }
