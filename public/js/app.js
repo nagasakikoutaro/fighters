@@ -49843,10 +49843,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/vote.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/vote.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/history.scss ./resources/sass/kitahirosima.scss ./resources/sass/realtime.scss ***!
-  \*************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/history.scss ./resources/sass/kitahirosima.scss ./resources/sass/realtime.scss ./resources/sass/vote.scss ***!
+  \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49854,7 +49865,8 @@ __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/js/app.js 
 __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/history.scss */"./resources/sass/history.scss");
 __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/kitahirosima.scss */"./resources/sass/kitahirosima.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/realtime.scss */"./resources/sass/realtime.scss");
+__webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/realtime.scss */"./resources/sass/realtime.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/vote.scss */"./resources/sass/vote.scss");
 
 
 /***/ })

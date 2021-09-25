@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Content;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 use App\Kitahirosima;
 class KitahirosimaController extends Controller
@@ -48,21 +49,21 @@ class KitahirosimaController extends Controller
         }
         return view('content.kitahirosima.index',['posts' => $posts, 'cond_title' => $cond_title]);
     }
-    public function edit()
+    public function edit(Request $request)
     {
         // Kitahirosima Modelからデータを取得する
-      $news = Kitahirosima::find($request->id);
+      $kitahirosima = Kitahirosima::find($request->id);
       if (empty($kitahirosima)) {
         abort(404);    
       }
         return view('content.kitahirosima.edit',['kitahirosima_form' => $kitahirosima]);
     }
-    public function update()
+    public function update(Request $request)
     {
         // Validationをかける
       $this->validate($request, Kitahirosima::$rules);
       // kitahirosima Modelからデータを取得する
-      $news = Kitahirosima::find($request->id);
+      $kitahirosima = Kitahirosima::find($request->id);
       // 送信されてきたフォームデータを格納する
         $kitahirosima_form = $request->all();
       if ($request->remove == 'true') {
@@ -80,5 +81,9 @@ class KitahirosimaController extends Controller
       // 該当するデータを上書きして保存する
       $kitahirosima->fill($kitahirosima_form)->save();
         return redirect('content/kitahirosima/');
+    }
+    public function vote(Request $request){
+        $user_id = Auth::user()->id;
+        $player_id = $request->player_id;
     }
 }

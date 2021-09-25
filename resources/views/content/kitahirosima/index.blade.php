@@ -46,7 +46,7 @@
                                 </tr>
                                 <td>
                                     <div>
-                                        <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
+                                        <a href="{{ action('Content\KitahirosimaController@edit', ['id' => $kitahirosima->id]) }}">編集</a>
                                     </div>
                                 </td>
                             @endforeach
@@ -56,4 +56,11 @@
             </div>
         </div>
     </div>
+    
+    
+    <form action="/content/vote" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+       <button type='submit' name='player_id' value='1'>佐藤選手に投票</button>
+       <button type='submit' name='player_id' value='2'>田中選手に投票</button>
+    </form>
 @endsection
