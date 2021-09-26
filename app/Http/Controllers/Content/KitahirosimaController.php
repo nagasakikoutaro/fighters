@@ -80,7 +80,7 @@ class KitahirosimaController extends Controller
       unset($kitahirosima_form['_token']);
       // 該当するデータを上書きして保存する
       $kitahirosima->fill($kitahirosima_form)->save();
-        return redirect('content/kitahirosima/');
+        return redirect('content/kitahirosima');
     }
     public function vote(Request $request){
         $user_id = Auth::user()->id;

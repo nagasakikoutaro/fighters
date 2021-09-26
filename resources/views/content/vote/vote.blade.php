@@ -11,8 +11,15 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>お気に入りの選手に投票してください！</h2>
-                 <form action="content/vote" method="post" enctype="multipart/form-data">
-                     {{ csrf_field() }}
+                 <form action="vote" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                     @if (count($errors) > 0)
+                        <ul>
+                            @foreach($errors->all() as $e)
+                                <li>{{ $e }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                     <button type='submit' name='player_id' value='1'>斎藤　佑樹　選手</button>
                     <button type='submit' name='player_id' value='2'>生田目　翼　選手</button>
                     <button type='submit' name='player_id' value='3'>加藤 貴之　選手</button>

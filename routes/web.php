@@ -29,7 +29,7 @@ Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
     Route::get('edit','Content\KitahirosimaController@edit');
     Route::post('edit','Content\KitahirosimaController@update');
 });
- Route::post('content/vote','Content\VoteController@vote');
+ Route::post('vote','Content\VoteController@vote');
  Route::post('content/vote','Content\VoteController@create');
  Route::get('content/vote','Content\VoteController@add');
 Auth::routes();
