@@ -30,6 +30,7 @@ Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
     Route::post('edit','Content\KitahirosimaController@update');
 });
     Route::get('content/favorite/vote','Content\FavoriteController@add');
-    Route::post('content/favorite/vote','Content\FavoriteController@vote');
+    Route::post('favorite/vote','Content\FavoriteController@vote');
+    
 Auth::routes();
 

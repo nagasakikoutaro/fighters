@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVoteTable extends Migration
+class DropColumnHogesColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateVoteTable extends Migration
      */
     public function up()
     {
-        Schema::create('vote', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('player_id');
-            $table->timestamps();
+        Schema::table('favorites', function (Blueprint $table) {
+            $table->dropColumn('user_id');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateVoteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vote');
+        Schema::table('favorites', function (Blueprint $table) {
+             $table->boolean('user_id')->default(false);
+        });
     }
 }
