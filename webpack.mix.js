@@ -15,5 +15,4 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/history.scss', 'public/css')
     .sass('resources/sass/kitahirosima.scss', 'public/css')
-    .sass('resources/sass/realtime.scss', 'public/css')
     .sass('resources/sass/favorite.scss', 'public/css');

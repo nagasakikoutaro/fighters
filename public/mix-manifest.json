@@ -3,6 +3,5 @@
     "/css/app.css": "/css/app.css",
     "/css/history.css": "/css/history.css",
     "/css/kitahirosima.css": "/css/kitahirosima.css",
-    "/css/realtime.css": "/css/realtime.css",
-    "/css/vote.css": "/css/vote.css"
+    "/css/favorite.css": "/css/favorite.css"
 }
