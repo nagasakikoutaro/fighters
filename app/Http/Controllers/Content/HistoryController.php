@@ -52,7 +52,11 @@ class HistoryController extends Controller
     }
     public function edit()
     {
-        return view('content.history.edit');
+        $history = History::find($request->id);
+      if (empty($history)) {
+        abort(404);    
+      }
+      return view('content.history.edit', ['history_form' => $history]);
     }
     public function update()
     {
