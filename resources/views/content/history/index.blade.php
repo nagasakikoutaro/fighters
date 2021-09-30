@@ -42,6 +42,11 @@
                                     <th>{{ $history->id }}</th>
                                     <td>{{ \Str::limit($history->title, 100) }}</td>
                                     <td>{{ \Str::limit($history->body, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Content\HistoryController@edit', ['id' => $history->id]) }}">編集</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

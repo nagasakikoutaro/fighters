@@ -50,7 +50,7 @@ class HistoryController extends Controller
         }
         return view('content.history.index',['posts' => $posts, 'cond_title' => $cond_title]);
     }
-    public function edit()
+    public function edit(Request $request)
     {
         $history = History::find($request->id);
       if (empty($history)) {
@@ -58,8 +58,29 @@ class HistoryController extends Controller
       }
       return view('content.history.edit', ['history_form' => $history]);
     }
-    public function update()
+    public function update(Request $request)
     {
-        return view('content/history/edit');
+        // Validationをかける
+      $this->validate($request, History::$rules);
+      // kitahirosima Modelからデータを取得する
+      $history = History::find($request->id);
+      // 送信されてきたフォームデータを格納する
+        $history_form = $request->all();
+      if ($request->remove == 'true') {
+          $history_form['image_path'] = null;
+      } elseif ($request->file('image')) {
+          $path = $request->file('image')->store('public/image');
+          $history_form['image_path'] = basename($path);
+      } else {
+          $history_form['image_path'] = $history->image_path;
+      }
+
+      unset($history_form['image']);
+      unset($history_form['remove']);
+      unset($history_form['_token']);
+      // 該当するデータを上書きして保存する
+      $history->fill($history_form)->save();
+
+        return view('content/history');
     }
 }

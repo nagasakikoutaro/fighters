@@ -28,6 +28,8 @@ Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
     Route::get('kitahirosima','Content\KitahirosimaController@index');
     Route::get('edit','Content\KitahirosimaController@edit');
     Route::post('edit','Content\KitahirosimaController@update');
+     Route::get('Content/edit', 'Content\HistoryController@edit');
+    Route::post('Content/edit', 'Content\HistoryController@update');
 });
     Route::get('content/favorite/vote','Content\FavoriteController@add');
     Route::post('favorite/vote','Content\FavoriteController@vote');
