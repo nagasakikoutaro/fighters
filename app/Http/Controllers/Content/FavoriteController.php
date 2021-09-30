@@ -40,4 +40,12 @@ class FavoriteController extends Controller
         
         return redirect('content/favorite/vote');
      }
+     
+    public function result (Request $request){
+        $player_id = $request->player_id;
+        $posts = Favorite::all();
+      
+      return view('admin.news.result', ['posts' => $posts, 'cond_title' => $cond_title]);
+  }
+
 }
