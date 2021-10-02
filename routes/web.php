@@ -31,8 +31,12 @@ Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
      Route::get('Content/edit', 'Content\HistoryController@edit');
     Route::post('Content/edit', 'Content\HistoryController@update');
 });
-    Route::get('content/favorite/vote','Content\FavoriteController@add');
+Route::group(['middleware' => 'auth'], function() {
+ Route::get('content/favorite/vote','Content\FavoriteController@add');
     Route::post('favorite/vote','Content\FavoriteController@vote');
+    Route::get('favorite/result','Content\FavoriteController@result');
     
+});
+
 Auth::routes();
 

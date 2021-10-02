@@ -42,10 +42,14 @@ class FavoriteController extends Controller
      }
      
     public function result (Request $request){
-        $player_id = $request->player_id;
-        $posts = Favorite::all();
-      
-      return view('admin.news.result', ['posts' => $posts, 'cond_title' => $cond_title]);
-  }
+        $favorites = Favorite::all();
+    
 
+        $voteCounts = $favorites->countBy(function ($favorite) {
+            return $favorite->player_id;
+       });
+
+        dd($voteCounts);
+        return view('content/favorite/result');
+    }
 }
