@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 use App\Favorite;
+use App\Player;
 
 class FavoriteController extends Controller
 {
@@ -42,11 +43,15 @@ class FavoriteController extends Controller
      }
      
     public function result (Request $request){
-        $favorites = Favorite::all();
+        
+        $favorites = Player::find(1)->favorites;
+        foreach ($favorites as $favorite) {
+    //
+     }
     
 
         $voteCounts = $favorites->countBy(function ($favorite) {
-            return $favorite->player_id;
+            return $favorite->name;
        });
 
         dd($voteCounts);

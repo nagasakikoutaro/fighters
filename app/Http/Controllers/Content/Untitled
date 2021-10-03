@@ -1,0 +1,14 @@
+$favorites=$palyers->name
+
+
+
+ $favorites = Favorite::all();
+    
+
+        $voteCounts = $favorites->countBy(function ($favorite) {
+            return $favorite->player_id;
+       });
+
+        dd($voteCounts);
+        return view('content/favorite/result');
+    }
