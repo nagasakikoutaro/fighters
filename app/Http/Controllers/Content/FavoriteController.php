@@ -44,14 +44,13 @@ class FavoriteController extends Controller
      
     public function result (Request $request){
         
-        $favorites = Player::find(1)->favorites;
-        foreach ($favorites as $favorite) {
-    //
-     }
+        $favorites = Player::find(1);
+        $player= $favorites-> players();
+    
     
 
         $voteCounts = $favorites->countBy(function ($favorite) {
-            return $favorite->name;
+            return $favorite->players()->name;
        });
 
         dd($voteCounts);
