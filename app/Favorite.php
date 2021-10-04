@@ -11,8 +11,10 @@ class Favorite extends Model
     public static $rules = array(
         'player_id'=> 'required',
     );
+   
+   
     public function players()
     {
-        return $this->hasMany('App\Player');
+        return $this->belongsTo('App\Player');
     }
 }
