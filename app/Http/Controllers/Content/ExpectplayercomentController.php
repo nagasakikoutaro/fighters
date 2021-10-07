@@ -11,4 +11,9 @@ class ExpectplayercomentController extends Controller
   {
       return view('content.expectcoment.create');
   }
+   public function create(Request $request)
+  {
+     
+      return redirect('content/expectcoment/create');
+  }  
 }

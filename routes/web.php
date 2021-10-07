@@ -32,7 +32,7 @@ Route::group(['prefix' => 'content','middleware' => 'auth'], function() {
     Route::post('Content/edit', 'Content\HistoryController@update');
     Route::get('coment/create', 'Content\ComentController@add');
     Route::get('todaycoment/create', 'Content\TodayplayercomentController@add');
-    Route::get('exceptcoment/create', 'Content\ExpectplayerComentController@add');
+    Route::get('expectcoment/create', 'Content\ExpectplayercomentController@add');
 });
 Route::group(['middleware' => 'auth'], function() {
  Route::get('content/favorite/vote','Content\FavoriteController@add');

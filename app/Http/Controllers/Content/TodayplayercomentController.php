@@ -11,4 +11,9 @@ class TodayplayercomentController extends Controller
   {
       return view('content.todaycoment.create');
   }
+   public function create(Request $request)
+  {
+     
+      return redirect('content/todaycoment/create');
+  }  
 }
