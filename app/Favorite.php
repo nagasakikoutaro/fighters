@@ -13,8 +13,8 @@ class Favorite extends Model
     );
    
    
-    public function players()
-    {
+    public function player(){
         return $this->belongsTo('App\Player');
     }
-}
+  }
+

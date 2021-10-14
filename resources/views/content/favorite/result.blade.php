@@ -12,11 +12,11 @@
             <div class="col-md-8 mx-auto">
                 <h2>投票結果！</h2>
                  <form action="/favorite/result" method="post" enctype="multipart/form-data">
-                    @foreach ($favorites as $favorite)
+                    @foreach ($voteCounts as $playerName => $voteCount)
                     
                     <div>
-                    <h1>{{ $favorites['player_id'] }}選手</h1>
-                    <p>{{ $votecounts }}票</p>
+                    <h1>{{ $playerName }}選手</h1>
+                    <h1>{{ $voteCount }}票</h1>
                     </div>
 @endforeach
 

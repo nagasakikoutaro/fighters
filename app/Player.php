@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
+    protected $table = 'players';
   
-    public function favorite(){
-    return $this->belongsTo('App\Favorite');
-}
-    //
+     public function favorite(){
+        return $this->belongsTo('App\Favorite');
+    }
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Favorite;
 use App\Player;
+use Illuminate\Support\Facades\DB;
 
 class FavoriteController extends Controller
 {
@@ -43,17 +44,13 @@ class FavoriteController extends Controller
      }
      
     public function result (Request $request){
-        
-        $favorites = Player::find(1);
-        $player= $favorites-> players();
+        //選手ごとの投票数を表示できるようにしたい
+      $favorites = Favorite::all();
     
     
-
-        $voteCounts = $favorites->countBy(function ($favorite) {
-            return $favorite->players()->name;
+       $voteCounts = $favorites->countBy(function ($favorite) {
+            return $favorite->player->name;
        });
-
-        dd($voteCounts);
-        return view('content/favorite/result');
+        return view('content/favorite/result',compact('voteCounts'));
     }
 }
