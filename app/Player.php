@@ -8,7 +8,7 @@ class Player extends Model
 {
     protected $table = 'players';
   
-     public function favorite(){
-        return $this->belongsTo('App\Favorite');
+     public function vote(){
+        return $this->belongsTo('App\Vote');
     }
 }
