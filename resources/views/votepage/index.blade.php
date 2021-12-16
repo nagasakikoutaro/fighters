@@ -1,10 +1,10 @@
-@extends('layouts.favorite')
-@section('title', '投稿一覧')
+@extends('layouts.vote')
+@section('title', '北海道日本ハムファイターズ投票')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>投稿一覧</h2>
+            <h2>北海道日本ハムファイターズ投票</h2>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -51,6 +51,9 @@
                                         </div>
                                          <div>
                                             <a href="{{ action('VotepageController@show', ['id' => $votepage->id]) }}">投票ページへ</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('VoteController@result', ['id' => $votepage->id]) }}">投票結果</a>
                                         </div>
                                     </td>    
                                 </tr>

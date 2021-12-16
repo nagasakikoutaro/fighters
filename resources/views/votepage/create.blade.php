@@ -1,11 +1,5 @@
-{{-- layouts/admin.blade.phpを読み込む --}}
-@extends('layouts.favorite')
-
-
-{{-- history.blade.phpの@yield('title')に'思い出'を埋め込む --}}
+@extends('layouts.vote')
 @section('title', '投稿ページ作成')
-
-{{-- history.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
         <div class="row">

@@ -21,12 +21,12 @@ class VoteController extends Controller
      
     public function result (Request $request){
         //選手ごとの投票数を表示できるようにしたい
-      $favorites = Favorite::all();
+      $votes = Vote::all();
     
     
-       $voteCounts = $favorites->countBy(function ($favorite) {
-            return $favorite->player->name;
+       $voteCounts = $votes->countBy(function ($vote) {
+            return $vote->player->name;
        });
-        return view('content/favorite/result',compact('voteCounts'));
+        return view('vote/result',compact('voteCounts'));
     }
 }

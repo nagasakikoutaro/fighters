@@ -21,11 +21,12 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('votepage/create','VotepageController@add');
 Route::post('votepage/create','VotepageController@create');
 Route::get('vote','VotepageController@show');
+Route::post('vote','VoteController@vote');
 Route::get('/','VotepageController@index');
 Route::get('votepage/edit', 'VotepageController@edit'); 
 Route::post('votepage/edit', 'VotepageController@update'); 
 Route::get('votepage/delete', 'VotepageController@delete');
-Route::post('vote','VoteController@vote');
+Route::get('vote/result', 'VoteController@result');
 });
 
 Auth::routes();

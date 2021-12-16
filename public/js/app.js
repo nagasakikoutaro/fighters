@@ -49810,32 +49810,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/favorite.scss":
-/*!**************************************!*\
-  !*** ./resources/sass/favorite.scss ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/history.scss":
-/*!*************************************!*\
-  !*** ./resources/sass/history.scss ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/kitahirosima.scss":
-/*!******************************************!*\
-  !*** ./resources/sass/kitahirosima.scss ***!
-  \******************************************/
+/***/ "./resources/sass/vote.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/vote.scss ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49844,17 +49822,15 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/history.scss ./resources/sass/kitahirosima.scss ./resources/sass/favorite.scss ***!
-  \*************************************************************************************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/vote.scss ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/history.scss */"./resources/sass/history.scss");
-__webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/kitahirosima.scss */"./resources/sass/kitahirosima.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/favorite.scss */"./resources/sass/favorite.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/fighters/resources/sass/vote.scss */"./resources/sass/vote.scss");
 
 
 /***/ })
