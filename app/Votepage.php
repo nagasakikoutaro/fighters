@@ -12,4 +12,7 @@ class Votepage extends Model
         'name' => 'required',
         'title' => 'required',
     );
+    public function vote(){
+        return $this->belongsTo('App\Vote');
+    }
 }

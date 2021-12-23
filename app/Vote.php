@@ -9,9 +9,10 @@ class Vote extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'player_id' => 'required',
+        'name' => 'required',
+        'votepage_id' => 'required'
     );
-     public function player(){
-        return $this->belongsTo('App\Player');
+     public function votepage(){
+        return $this->belongsTo('App\Votepage');
     }
 }

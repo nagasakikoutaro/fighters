@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Vote;
+use App\Player;
+use App\Votepage;
 
 class VoteController extends Controller
 {
@@ -15,7 +17,6 @@ class VoteController extends Controller
         $form = $request->all();
         $vote->fill($form);
         $vote->save();
-        
         return redirect('/');
      }
      
@@ -25,7 +26,7 @@ class VoteController extends Controller
     
     
        $voteCounts = $votes->countBy(function ($vote) {
-            return $vote->player->name;
+            return $vote->name;
        });
         return view('vote/result',compact('voteCounts'));
     }
