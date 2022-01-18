@@ -27,7 +27,6 @@ Route::get('votepage/edit', 'VotepageController@edit');
 Route::post('votepage/edit', 'VotepageController@update'); 
 Route::get('votepage/delete', 'VotepageController@delete');
 Route::get('vote/result', 'VoteController@result');
-Route::get('vote/test', 'VotepageController@test');
 });
 
 Auth::routes();

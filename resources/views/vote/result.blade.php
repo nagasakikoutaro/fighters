@@ -1,4 +1,4 @@
-@extends('layouts.vote')
+ @extends('layouts.vote')
 @section('title', '投票結果')
 @section('content')
  <div class="col-md-4">
@@ -8,10 +8,9 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
             <h2>投票結果！</h2>
-                @foreach ($voteCounts as $playerName => $voteCount)
+                @foreach ($votes as $vote)
                 <div>
-                <p>{{ $playerName }}選手</p>
-                <p>{{ $voteCount }}票</p>
+                <p>{{ $vote->name }}選手</p><p>{{ $vote->count }}票</p>
                 </div>
                 @endforeach
             </div>

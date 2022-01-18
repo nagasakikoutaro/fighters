@@ -1,4 +1,4 @@
-@extends('layouts.history')
+@extends('layouts.vote')
 
 @section('content')
     <div class="container">

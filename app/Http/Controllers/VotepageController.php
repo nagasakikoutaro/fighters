@@ -70,14 +70,5 @@ class VotepageController extends Controller
      
       return view('votepage.show', [ 'votepage' => $votepage]);
   }
-   public function test(Request $request)
-  {
-     //個別のページを作成する
-      $id = $request->id;
-      $votepage = Votepage::findOrFail($id);
-      
-     
-      return view('vote.test', [ 'votepage' => $votepage]);
-  }
     
 }
